@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   app.use(bodyParser.json());
   
   app.post("/echo", function(req, res) {
-	 console.log(req); 
+	 console.log(req.body.queryResult.parameters); 
     var speech =
       req.body.queryResult &&
       req.body.queryResult.parameters &&
