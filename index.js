@@ -32,6 +32,21 @@ app.get("/", (req, res) => {
       req.body.queryResult.parameters.Name
         ? req.body.queryResult.parameters.Name
         : "Seems like some problem. Speak again.";
+    var card = [
+        {
+          "card": {
+            "title": "card title",
+            "subtitle": "card text",
+            "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+            "buttons": [
+              {
+                "text": "button text",
+                "postback": "https://assistant.google.com/"
+              }
+            ]
+          }
+        }
+      ];
     
     var speechResponse = {
       google: {
@@ -52,6 +67,7 @@ app.get("/", (req, res) => {
       payload: speechResponse,
       //data: speechResponse,
       fulfillmentText: speech,
+	  fulfillmentMessages:card,
       speech: speech,
       displayText: speech,
       source: "webhook-echo-sample"
