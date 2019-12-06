@@ -59,4 +59,4 @@ app.get("/", (req, res) => {
   
  app.set("views", path.join(__dirname, "views"));
   app.set("view engine", "pug");
-  app.use(express.static(path.join(__dirname, "public")));s
+  app.use(express.static(path.join(__dirname, "public")));
