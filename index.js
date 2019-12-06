@@ -14,17 +14,17 @@ app.get("/", (req, res) => {
 
  
 
-  const restService = express();
+ 
 
-  restService.use(
+  app.use(
     bodyParser.urlencoded({
       extended: true
     })
   );
   
-  restService.use(bodyParser.json());
+  app.use(bodyParser.json());
   
-  restService.post("/echo", function(req, res) {
+  app.post("/echo", function(req, res) {
 	 console.log(req); 
     var speech =
       req.body.queryResult &&
@@ -57,9 +57,7 @@ app.get("/", (req, res) => {
       source: "webhook-echo-sample"
     });
   });
-  restService.listen(process.env.PORT || 8000, function() {
-  console.log("Server up and listening");
-});
+ 
  app.set("views", path.join(__dirname, "views"));
   app.set("view engine", "pug");
   app.use(express.static(path.join(__dirname, "public")));
