@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
   restService.use(bodyParser.json());
   
   restService.post("/echo", function(req, res) {
+	 console.log(req); 
     var speech =
       req.body.queryResult &&
       req.body.queryResult.parameters &&
