@@ -23,11 +23,11 @@ app.get("/", (req, res) => {
   
   app.post("/echo", function(req, res) {
 
-var speech=''
+var speech='hi';
 
 if(req.body.queryResult){
 	
-  if(req.body.queryResult.intent.displayName=='Create Account')
+  if(""+req.body.queryResult.intent.displayName==="Create Account")
   {
 	   Request.post({
     "headers": { "content-type": "application/json" },
@@ -38,21 +38,18 @@ if(req.body.queryResult){
         return console.dir(error);
     }
     speech+=JSON.parse(body);
+	console.dir("post responce "+speech);
     console.dir(JSON.parse(body));
 });
   }
 
- if(req.body.queryResult.intent.displayName=='account detail')
+ if(""+req.body.queryResult.intent.displayName==="account detail")
  {  
     Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
-
-      
-     
-
-    console.log("arr "+JSON.parse(body)) ;
+   console.dir("get responce " +speech);
         speech+=JSON.parse(body);
       console.dir(JSON.parse(body));
   });
@@ -77,7 +74,7 @@ if(req.body.queryResult){
         ? req.body.queryResult.parameters.Name
         : "Seems like some problem. Speak again.";
 */
-console.log("  ss>>"+speech);
+console.log("speach >> "+speech);
 //speech='hello am ';
       console.log(req.body.queryResult.intent.displayName);  
     var card = [
@@ -115,7 +112,7 @@ console.log("  ss>>"+speech);
       payload: speechResponse,
       //data: speechResponse,
       fulfillmentText: speech,
-	  fulfillmentMessages:card,
+	  //fulfillmentMessages:card,
       speech: speech,
       displayText: speech,
       source: "salesforce api"
