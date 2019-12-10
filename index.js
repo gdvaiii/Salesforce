@@ -43,7 +43,7 @@ if(req.body.queryResult){
 });
   }
 
- if(""+req.body.queryResult.intent.displayName==="account detail")
+ if(""+req.body.queryResult.intent.displayName==="Account detail")
  {  
     Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
       if(error) {
