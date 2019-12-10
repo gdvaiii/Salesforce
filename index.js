@@ -4,7 +4,7 @@ var Request = require("request");
 const bodyParser = require("body-parser");
 
 const app = express();
-var speech=''
+
 const port = process.env.PORT || "8000";
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
   
   app.post("/echo", function(req, res) {
 
-
+var speech=''
 
 if(req.body.queryResult){
 	
@@ -118,7 +118,7 @@ console.log("  ss>>"+speech);
 	  fulfillmentMessages:card,
       speech: speech,
       displayText: speech,
-      source: "webhook-echo-sample"
+      source: "salesforce api"
     });
   });
  
