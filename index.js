@@ -1,9 +1,10 @@
 const express = require("express");
 const path = require("path");
-
+var Request = require("request");
 const bodyParser = require("body-parser");
 
 const app = express();
+var speech=''
 const port = process.env.PORT || "8000";
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
@@ -11,10 +12,6 @@ app.get("/", (req, res) => {
   app.listen(port, () => {
     console.log(`Listening to requests on http://localhost:${port}`);
   });
-
- 
-
- 
 
   app.use(
     bodyParser.urlencoded({
@@ -25,13 +22,64 @@ app.get("/", (req, res) => {
   app.use(bodyParser.json());
   
   app.post("/echo", function(req, res) {
-	 console.log(req.body.queryResult.parameters); 
-    var speech =
+
+
+
+if(req.body.queryResult){
+	
+  if(req.body.queryResult.intent.displayName=='Create Account')
+  {
+	   Request.post({
+    "headers": { "content-type": "application/json" },
+    "url": "https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest",
+    "body": JSON.stringify(req.body.queryResult.parameters)
+}, (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    speech+=JSON.parse(body);
+    console.dir(JSON.parse(body));
+});
+  }
+
+ if(req.body.queryResult.intent.displayName=='account detail')
+ {  
+    Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+
+      
+     
+
+    console.log("arr "+JSON.parse(body)) ;
+        speech+=JSON.parse(body);
+      console.dir(JSON.parse(body));
+  });
+ }
+}
+  /* Request.post({
+    "headers": { "content-type": "application/json" },
+    "url": "https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest",
+    "body": JSON.stringify(req.body.queryResult.parameters)
+}, (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    speech=JSON.parse(body);
+    console.dir(JSON.parse(body));
+});
+*/
+   /* var speech =
       req.body.queryResult &&
       req.body.queryResult.parameters &&
       req.body.queryResult.parameters.Name
         ? req.body.queryResult.parameters.Name
         : "Seems like some problem. Speak again.";
+*/
+console.log("  ss>>"+speech);
+//speech='hello am ';
+      console.log(req.body.queryResult.intent.displayName);  
     var card = [
         {
           "card": {
