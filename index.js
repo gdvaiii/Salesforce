@@ -53,7 +53,34 @@ app.get("/", (req, res) => {
    
       console.dir(JSON.parse(body));  
 	 speech=""+JSON.parse(body);
-	   JSON.parse(body);
+	 
+	  var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
+	 
+	   
   });
 }
 
@@ -86,7 +113,7 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
    
       console.dir(JSON.parse(body));  
 	 speech=""+JSON.parse(body);
-	   JSON.parse(body);
+	   
   });
 }
 
@@ -120,6 +147,8 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
       console.dir(JSON.parse(body));  
 	 speech=""+JSON.parse(body);
 	   JSON.parse(body);
+	   
+	   
   });
 }
 
@@ -212,7 +241,8 @@ console.log("speach >> "+speech);
       }
     };
     
-    return res.json({
+
+  /*  return res.json({
       payload: speechResponse,
       //data: speechResponse,
       fulfillmentText: speech,
@@ -220,7 +250,7 @@ console.log("speach >> "+speech);
       speech: speech,
       displayText: speech,
       source: "salesforce api"
-    });
+    }); */
   });
  
  app.set("views", path.join(__dirname, "views"));
