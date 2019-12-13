@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
  if(""+req.body.queryResult.intent.displayName==="Account detail")
  {  
 
-cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+	Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -79,7 +79,7 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
  if(""+req.body.queryResult.intent.displayName==="Contact detail")
  {  
 
-cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcontact", (error, response, body) => {
+Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcontact", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -112,7 +112,7 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
  if(""+req.body.queryResult.intent.displayName==="Case detail")
  {  
 
-cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcase", (error, response, body) => {
+Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcase", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -146,7 +146,7 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
  if(""+req.body.queryResult.intent.displayName==="Task detail")
  {  
 
-cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowresttask", (error, response, body) => {
+Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowresttask", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
