@@ -46,8 +46,7 @@ if(req.body.queryResult){
  if(""+req.body.queryResult.intent.displayName==="Account detail")
  {  
 
-const useRequest = async () => {
-  return res = await Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -57,7 +56,107 @@ const useRequest = async () => {
 	   JSON.parse(body);
   });
 }
-useRequest();
+
+/******** CONTACT  *******************/
+if(req.body.queryResult){
+	
+  if(""+req.body.queryResult.intent.displayName==="Create Contact")
+  {
+ Request.post({
+    "headers": { "content-type": "application/json" },
+    "url": "https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcontact",
+    "body": JSON.stringify(req.body.queryResult.parameters)
+}, (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    speech=""+JSON.parse(body);
+	console.dir("post responce "+speech);
+    console.dir(JSON.parse(body));
+});
+  }
+
+ if(""+req.body.queryResult.intent.displayName==="Contact detail")
+ {  
+
+cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcontact", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+   
+      console.dir(JSON.parse(body));  
+	 speech=""+JSON.parse(body);
+	   JSON.parse(body);
+  });
+}
+
+/*******************CASE*******************/
+if(req.body.queryResult){
+	
+  if(""+req.body.queryResult.intent.displayName==="Create Case")
+  {
+ Request.post({
+    "headers": { "content-type": "application/json" },
+    "url": "https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcase",
+    "body": JSON.stringify(req.body.queryResult.parameters)
+}, (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    speech=""+JSON.parse(body);
+	console.dir("post responce "+speech);
+    console.dir(JSON.parse(body));
+});
+  }
+
+ if(""+req.body.queryResult.intent.displayName==="Case detail")
+ {  
+
+cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcase", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+   
+      console.dir(JSON.parse(body));  
+	 speech=""+JSON.parse(body);
+	   JSON.parse(body);
+  });
+}
+
+
+/**********TASK***************/
+if(req.body.queryResult){
+	
+  if(""+req.body.queryResult.intent.displayName==="Create Task")
+  {
+ Request.post({
+    "headers": { "content-type": "application/json" },
+    "url": "https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowresttask",
+    "body": JSON.stringify(req.body.queryResult.parameters)
+}, (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    speech=""+JSON.parse(body);
+	console.dir("post responce "+speech);
+    console.dir(JSON.parse(body));
+});
+  }
+
+ if(""+req.body.queryResult.intent.displayName==="Task detail")
+ {  
+
+cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowresttask", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+   
+      console.dir(JSON.parse(body));  
+	 speech=""+JSON.parse(body);
+	   JSON.parse(body);
+  });
+}
+
  
   /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
       if(error) {
@@ -69,6 +168,61 @@ useRequest();
   });*/
  }
 }
+ 
+  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+   console.dir("get responce " +speech);
+        speech+=JSON.parse(body);
+      console.dir(JSON.parse(body));  
+  });*/
+ }
+}
+ 
+  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+   console.dir("get responce " +speech);
+        speech+=JSON.parse(body);
+      console.dir(JSON.parse(body));  
+  });*/
+ }
+}
+ 
+  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+      if(error) {
+          return console.dir(error);
+      }
+   console.dir("get responce " +speech);
+        speech+=JSON.parse(body);
+      console.dir(JSON.parse(body));  
+  });*/
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* Request.post({
     "headers": { "content-type": "application/json" },
     "url": "https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest",
@@ -136,3 +290,26 @@ console.log("speach >> "+speech);
  app.set("views", path.join(__dirname, "views"));
   app.set("view engine", "pug");
   app.use(express.static(path.join(__dirname, "public")));
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
