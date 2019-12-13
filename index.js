@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 
 
-if(req.body.queryResult){
+
 	
   if(""+req.body.queryResult.intent.displayName==="Create Account")
   {
@@ -58,7 +58,7 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
 }
 
 /******** CONTACT  *******************/
-if(req.body.queryResult){
+
 	
   if(""+req.body.queryResult.intent.displayName==="Create Contact")
   {
@@ -91,7 +91,7 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
 }
 
 /*******************CASE*******************/
-if(req.body.queryResult){
+
 	
   if(""+req.body.queryResult.intent.displayName==="Create Case")
   {
@@ -125,7 +125,7 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
 
 
 /**********TASK***************/
-if(req.body.queryResult){
+
 	
   if(""+req.body.queryResult.intent.displayName==="Create Task")
   {
@@ -156,70 +156,6 @@ cRequest.get("https://googleassistantrashid-developer-edition.na136.force.com/se
 	   JSON.parse(body);
   });
 }
-
- 
-  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
-      if(error) {
-          return console.dir(error);
-      }
-   console.dir("get responce " +speech);
-        speech+=JSON.parse(body);
-      console.dir(JSON.parse(body));  
-  });*/
- }
-}
- 
-  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
-      if(error) {
-          return console.dir(error);
-      }
-   console.dir("get responce " +speech);
-        speech+=JSON.parse(body);
-      console.dir(JSON.parse(body));  
-  });*/
- }
-}
- 
-  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
-      if(error) {
-          return console.dir(error);
-      }
-   console.dir("get responce " +speech);
-        speech+=JSON.parse(body);
-      console.dir(JSON.parse(body));  
-  });*/
- }
-}
- 
-  /*Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
-      if(error) {
-          return console.dir(error);
-      }
-   console.dir("get responce " +speech);
-        speech+=JSON.parse(body);
-      console.dir(JSON.parse(body));  
-  });*/
- }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
