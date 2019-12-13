@@ -76,7 +76,7 @@ app.get("/", (req, res) => {
 });
   }
 
- if(""+req.body.queryResult.intent.displayName==="Contact detail")
+ if(""+req.body.queryResult.intent.displayName==="Contact Detail")
  {  
 
 Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcontact", (error, response, body) => {
@@ -109,7 +109,7 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
 });
   }
 
- if(""+req.body.queryResult.intent.displayName==="Case detail")
+ if(""+req.body.queryResult.intent.displayName==="Case Details")
  {  
 
 Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowrestcase", (error, response, body) => {
@@ -143,7 +143,7 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
 });
   }
 
- if(""+req.body.queryResult.intent.displayName==="Task detail")
+ if(""+req.body.queryResult.intent.displayName==="Task Details")
  {  
 
 Request.get("https://googleassistantrashid-developer-edition.na136.force.com/services/apexrest/Dialogflowresttask", (error, response, body) => {
