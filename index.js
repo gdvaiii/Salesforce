@@ -39,7 +39,31 @@ app.get("/", (req, res) => {
     }
     speech=""+JSON.parse(body);
 	console.dir("post responce "+speech);
-    console.dir(JSON.parse(body));
+ var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
 });
   }
 
@@ -99,7 +123,31 @@ app.get("/", (req, res) => {
     }
     speech=""+JSON.parse(body);
 	console.dir("post responce "+speech);
-    console.dir(JSON.parse(body));
+    var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
 });
   }
 
@@ -113,6 +161,31 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
    
       console.dir(JSON.parse(body));  
 	 speech=""+JSON.parse(body);
+	  var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
 	   
   });
 }
@@ -132,7 +205,31 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
     }
     speech=""+JSON.parse(body);
 	console.dir("post responce "+speech);
-    console.dir(JSON.parse(body));
+    var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
 });
   }
 
@@ -146,7 +243,31 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
    
       console.dir(JSON.parse(body));  
 	 speech=""+JSON.parse(body);
-	   JSON.parse(body);
+	   var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
 	   
 	   
   });
@@ -168,7 +289,31 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
     }
     speech=""+JSON.parse(body);
 	console.dir("post responce "+speech);
-    console.dir(JSON.parse(body));
+   var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
 });
   }
 
@@ -182,7 +327,31 @@ Request.get("https://googleassistantrashid-developer-edition.na136.force.com/ser
    
       console.dir(JSON.parse(body));  
 	 speech=""+JSON.parse(body);
-	   JSON.parse(body);
+	 var speechResponse = {
+      google: {
+        expectUserResponse: true,
+        richResponse: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: speech
+              }
+            }
+          ]
+        }
+      }
+    };
+    
+
+    return res.json({
+      payload: speechResponse,
+      //data: speechResponse,
+      fulfillmentText: speech,
+	  //fulfillmentMessages:card,
+      speech: speech,
+      displayText: speech,
+      source: "salesforce api"
+    });
   });
 }
 
