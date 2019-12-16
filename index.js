@@ -2,8 +2,11 @@ const express = require("express");
 const path = require("path");
 var Request = require("request");
 const bodyParser = require("body-parser");
-
+const dotenv = require('dotenv');
 const app = express();
+var nforce = require('nforce');
+dotenv.config();
+
 
 const port = process.env.PORT || "8000";
 app.get("/", (req, res) => {
@@ -21,6 +24,24 @@ app.get("/", (req, res) => {
   
   app.use(bodyParser.json());
   var speech='hi';
+  
+    
+var org = nforce.createConnection({
+  clientId: process.env.CLIENTID,
+  clientSecret: process.env.CLIENTSECRET,
+  redirectUri: 'http://localhost:3000/oauth/_callback',
+  apiVersion: 'v34.0',
+  environment: 'production',
+  mode: 'single',
+  autoRefresh: true
+});
+
+org.authenticate({username: process.env.USERNAME, password: process.env.PASSWORD},
+  function(err, resp){
+    if(!err) console.log('Successfully connected to Salesforce.Cached token: ' + org.oauth.access_token);
+    if(err) console.log('Cannot connect to Salesforce: ' + err);
+});
+  
   app.post("/echo", function(req, res) {
 
 
