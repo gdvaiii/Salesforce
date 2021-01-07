@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   {
  Request.post({
     "headers": { "content-type": "application/json" },
-    "url": "gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrest",
+    "url": "https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrest",
     "body": JSON.stringify(req.body.queryResult.parameters)
 }, (error, response, body) => {
     if(error) {
@@ -72,7 +72,7 @@ app.get("/", (req, res) => {
  if(""+req.body.queryResult.intent.displayName==="Account detail")
  {  
 
-	Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrest", (error, response, body) => {
+	Request.get("https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrest", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -117,7 +117,7 @@ app.get("/", (req, res) => {
   {
  Request.post({
     "headers": { "content-type": "application/json" },
-    "url": "gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrestcontact",
+    "url": "https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrestcontact",
     "body": JSON.stringify(req.body.queryResult.parameters)
 }, (error, response, body) => {
     if(error) {
@@ -156,7 +156,7 @@ app.get("/", (req, res) => {
  if(""+req.body.queryResult.intent.displayName==="Contact Detail")
  {  
 
-Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrestcontact", (error, response, body) => {
+Request.get("https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrestcontact", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -199,7 +199,7 @@ Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogfl
   {
  Request.post({
     "headers": { "content-type": "application/json" },
-    "url": "gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrestcase",
+    "url": "https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrestcase",
     "body": JSON.stringify(req.body.queryResult.parameters)
 }, (error, response, body) => {
     if(error) {
@@ -238,7 +238,7 @@ Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogfl
  if(""+req.body.queryResult.intent.displayName==="Case Details")
  {  
 
-Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrestcase", (error, response, body) => {
+Request.get("https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrestcase", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -283,7 +283,7 @@ Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogfl
   {
  Request.post({
     "headers": { "content-type": "application/json" },
-    "url": "gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowresttask",
+    "url": "https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowresttask",
     "body": JSON.stringify(req.body.queryResult.parameters)
 }, (error, response, body) => {
     if(error) {
@@ -322,7 +322,7 @@ Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogfl
  if(""+req.body.queryResult.intent.displayName==="Task Details")
  {  
 
-Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowresttask", (error, response, body) => {
+Request.get("https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowresttask", (error, response, body) => {
       if(error) {
           return console.dir(error);
       }
@@ -361,7 +361,7 @@ Request.get("gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogfl
 
   /* Request.post({
     "headers": { "content-type": "application/json" },
-    "url": "https://gdvaiii-developer-edition.ap24.force.com/services/apexrest/Dialogflowrest",
+    "url": "https://gdvaiii-developer-edition.ap24.force.com/googlehome/services/apexrest/Dialogflowrest",
     "body": JSON.stringify(req.body.queryResult.parameters)
 }, (error, response, body) => {
     if(error) {
